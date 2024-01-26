@@ -1,8 +1,13 @@
-import React, { forwardRef } from 'react'
+import React, { forwardRef, useImperativeHandle, useRef } from 'react'
 
 const ForwardRef = forwardRef((props, ref) => {
+  const refValue = useRef(null);
+  useImperativeHandle(ref, () => ({
+    focusMethod: () => refValue.current.focus()
+  }))
+  console.log("Child Component")
   return (
-    <input ref={ref}/>
+    <input ref={refValue}/>
   )
 })
 

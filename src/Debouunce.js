@@ -29,12 +29,11 @@ const Debouunce = () => {
   }
 
   const handleFocus = () =>{
-    inputRef.current.focus()
-    inputRef.current.style.background = 'green'
+    inputRef.current.focusMethod()
     setCount(count+1)
   }
 
-  console.log(inputRef)
+  console.log("Parent Component")
 
   return (
     <div>
